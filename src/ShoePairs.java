@@ -23,8 +23,10 @@ class ShoePairs {
 
             if (shoesMap.containsKey(size) && !(shoesMap.get(size).get(size).equals(foot))) { // Pair found
                 noOfPairs++;
+                shoesMap.remove(size); // Remove the shoe pair and do not insert
+            } else {
+                shoesMap.put(size, oneShoeMap); // Insert or replace if same shoe
             }
-            shoesMap.put(size, oneShoeMap); //Insert or replace if already present
         }
         System.out.println(String.valueOf(noOfPairs));
     }
